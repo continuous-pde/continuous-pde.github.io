@@ -1,9 +1,325 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        Pending...
-    </body>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Continuous PDEs"/>
+    <title>Continuous PDEs</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
+            type="text/javascript"></script>
+    <!--    <script src="https://threejs.org/build/three.js"></script>-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300ital…alic%7CVarela+Round:400%7CBungee+Shade:regular%7CRoboto:300,regular,500"
+          media="all">
+    <style>
+        .item {
+            width: 200px;
+            text-align: center;
+            display: block;
+            background-color: transparent;
+            border: 1px solid transparent;
+            margin-right: 10px;
+            margin-bottom: 1px;
+            float: left;
+        }
+
+        .table2 {
+            --bs-table-bg: transparent;
+            --bs-table-accent-bg: transparent;
+            --bs-table-striped-color: #212529;
+            --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+            --bs-table-active-color: #212529;
+            --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+            --bs-table-hover-color: #212529;
+            --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+            vertical-align: top;
+            line-height: 15px;
+            border-color: #dee2e6;
+        }
+
+        svg {
+            display: block;
+            margin: auto;
+        }
+
+        .bg-blue {
+            --bs-bg-opacity: 1;
+            background-color: #277C9D;
+        }
+
+        .slider-container {
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*position: relative;*/
+            /*overflow: hidden;*/
+        }
+
+        .slider-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slider-image.active {
+            opacity: 1;
+        }
+
+        #sphere-container {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav class=" navbar navbar-expand-lg navbar-dark bg-blue sticky-top">
+    <div class="container">
+        <img src="assets/NeurIPS_logo.png" style="width: 15%;">
+        <p class="text-white">2023</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
+                <li class="nav-item"><a class="nav-link" href="#model">Model</a></li>
+                <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Background image -->
+<div class="bg-image .img-fluid. max-width: 100%">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-center mt-5 container" style="padding-bottom: 1%">
+                <h2>Everything, Everywhere, All at Once: <br/>Continuous Solutions to PDEs from Sparse Observation Data
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center" style="margin-top:10px;">
+    <table class="table2">
+        <tr>
+            <td><a href="https://google.com" class="link-dark">Anonymous authors</a>&nbsp;</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="text-muted"><small></small></td>
+        </tr>
+    </table>
+</div>
+<!-- Background image -->
+
+<br/>
+<!--<div class="container">-->
+<!--    <div class="text-center">-->
+<!--        <img src="assets/teaser.gif" class="" style="width: 60%">-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="item col-sm-3">
+            <a href="https://openreview.net/forum?id=8k98ccXD9f" class="link-primary text-dark">
+                <img src="assets/paper.png" width="20%"/>
+                <b>Paper</b></a>
+        </div>
+
+        <div class="item col-sm-3">
+            <a href="https://google.com" class="link-primary text-dark">
+                <img src="assets/github.png" width="20%"/>
+                <b>GitHub (soon)</b></a>
+        </div>
+
+        <div class="col-sm"></div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<hr/>
+<div class="container" id="abstract" style="padding-top:100px; margin-top:-100px;">
+    <div class="text-dark text-justify text-center">
+        <h3>Abstract</h3>
+    </div>
+    <div class="text-dark text-justify">
+        Modern techniques for solving partial differential equations rely on adaptive methods to address trade-offs
+        between precision and complexity, but these handcrafted solutions require high modeling efforts and are limited
+        in their adaptivity. Data-driven methods based on large-scale machine learning promise high adaptivity by
+        integrating long-range dependencies in a more direct and more efficient way. In this work, we focus on
+        computational fluid dynamics and address the short-comings of a large part of the literature, which are based on
+        fixed support for computations and predictions in the form of regular or irregular grids. We propose a method
+        capable of performing predictions in a continuous spatial and temporal domain, while being trained on
+        observations which are sparse in space and time. Two key design choices make this possible: modeling the process
+        dynamics in a mesh-structured latent space through recurrent GNNs, and trained interpolation functions based on
+        transformers (cross-attention) acting on position queries, translating sparse data into continuous predictions.
+        Our model not only generalizes to new initial conditions (as standard auto-regressive models do) but also
+        performs zero-shot evaluation at arbitrary space and time locations. We evaluate on three standard datasets in
+        fluid dynamics and compare to strong baselines, which are outperformed in classical settings and in the extended
+        new task requiring continuous predictions.
+    </div>
+</div>
+
+<br/>
+<hr/>
+
+
+<!--RESULTS-->
+<div class="container" style="padding-top:100px; margin-top:-100px;">
+    <h3 id="results" style="padding-top:100px; margin-top:-100px;">Results</h3>
+    <div class="container">
+        <div class="text-center">
+            <h5>Navier Dataset</h5>
+            <u>Spatial Resolution</u>: <b>25%</b> <u>Temporal resolution</u>: <b>1/4</b>
+            <img id="slider-image-navier-25-4" src="assets/navier_25_4/0.png" style="width: 100%; height: auto;">
+            Time: <input type="range" id="slider-navier-25-4" min="0" max="19" step="1" value="0" style="width: 50%">
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    <div class="container">
+        <div class="text-center">
+            <u>Spatial Resolution</u>: <b>5%</b> <u>Temporal resolution</u>: <b>1/1</b>
+            <img id="slider-image-navier-05-1" src="assets/navier_05_1/0.png" style="width: 100%; height: auto;">
+            Time: <input type="range" id="slider-navier-05-1" min="0" max="19" step="1" value="0" style="width: 50%">
+        </div>
+
+    </div>
+    </br>
+    </br>
+    </br>
+    <div class="container" style="height: auto">
+        <div class="text-center">
+            <h5>Shallow Water</h5>
+            <u>Spatial Resolution</u>: <b>5%</b> <u>Temporal resolution</u>: <b>1/1</b>
+            <div class="row table-responsive-sm">
+                <div class="col" style="width: 19%;">
+                    <div class="text-center">
+                        Ground Truth
+                    </div>
+                    <div id="gt_container_05" class="img-fluid"></div>
+                </div>
+                <div class="col" style="width: 19%;">
+                    <div class="text-center">
+                        Ours
+                    </div>
+                    <div id="ours_container_05"></div>
+                </div>
+                <div class="col" style="width: 19%;">
+                    <div class="text-center">
+                        DINo
+                    </div>
+                    <div id="dino_container_05"></div>
+                </div>
+                <div class="col" style="width: 19%;">
+                    <div class="text-center">
+                        MeshGraphNet
+                    </div>
+                    <div id="mgn_container_05"></div>
+                </div>
+                <div class="col" style="width: 19%;">
+                    <div class="text-center">
+                        Magnet
+                    </div>
+                    <div id="magnet_container_05"></div>
+                </div>
+            </div>
+            <div id="controls">
+                Time: <input type="range" id="slider_shallow_05" min="0" max="19" step="1" value="0" style="width: 50%">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+<!--<div class="container" style="padding-top:100px; margin-top:-100px;">-->
+<!--    <h3 id="cite" style="padding-top:100px; margin-top:-100px;">Citation & Contact</h3>-->
+<!--&lt;!&ndash;    Do not hesitate to contact us for any questions about our project at this address : <a&ndash;&gt;-->
+<!--&lt;!&ndash;        href="mailto: mail_address">TODO</a>&ndash;&gt;-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--    <div class="container border bg-light">-->
+<!--    <pre>-->
+
+<!--    @inproceedings{TODO}-->
+<!--    </pre>-->
+<!--    </div>-->
+<!--</div>-->
+
+<br/>
+<br/>
+<br/>
+<!--<div class="container" style="padding-top:100px; margin-top:-100px;">-->
+<!--    <h3 id="funding" style="padding-top:100px; margin-top:-100px;">Funding</h3>-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--</div>-->
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- Bootstrap core JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
+<script src="js/scripts.js"></script>
+<script type="module" src="js/sphere.js"></script>
+
+</body>
 </html>
