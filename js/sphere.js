@@ -17,17 +17,24 @@ function updateLoadingAnimation(itemsLoaded, itemsTotal) {
 }
 
 
-function loadColors(fileURL, container) {
+function loadColors(fileURL, container, slider_name) {
     // Set up the scene
     const width = container.clientWidth;
     const height = container.clientWidth;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(5, width / height, 0.5, 1000);
+    const camera = new THREE.PerspectiveCamera(8, width / height, 0.5, 1000);
     const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(width, height);
     renderer.setClearColor(0xffffff); // Set the background color to white
     container.appendChild(renderer.domElement);
+
+    const size = 2;
+    const divisions = 20;
+
+    const gridHelper = new THREE.GridHelper( size, divisions );
+    gridHelper.position.y = -1;
+    scene.add( gridHelper );
 
     camera.position.z = 20;
     camera.position.y = 10;
@@ -113,7 +120,7 @@ function loadColors(fileURL, container) {
         });
 
 
-        var slider = document.getElementById('slider_shallow_05');
+        var slider = document.getElementById(slider_name);
 
         function update() {
             var imageIndex = parseInt(slider.value);
@@ -155,18 +162,32 @@ function loadColors(fileURL, container) {
 }
 
 var ground_truth_container = document.getElementById('gt_container_05');
-loadColors('data/shallow_05_1/groundtruth.json', ground_truth_container);
+loadColors('data/shallow_05_1/groundtruth.json', ground_truth_container, "slider_shallow_05");
 
 var ours_container = document.getElementById('ours_container_05');
-loadColors('data/shallow_05_1/gns.json', ours_container);
+loadColors('data/shallow_05_1/gns.json', ours_container, "slider_shallow_05");
 
 var dino_container = document.getElementById('dino_container_05');
-loadColors('data/shallow_05_1/dino.json', dino_container);
+loadColors('data/shallow_05_1/dino.json', dino_container, "slider_shallow_05");
 
 var mgn_container = document.getElementById('mgn_container_05');
-loadColors('data/shallow_05_1/mgn.json', mgn_container);
+loadColors('data/shallow_05_1/mgn.json', mgn_container, "slider_shallow_05");
 
 var magnet_container = document.getElementById('magnet_container_05');
-loadColors('data/shallow_05_1/magnet.json', magnet_container);
+loadColors('data/shallow_05_1/magnet.json', magnet_container, "slider_shallow_05");
 
 
+var ground_truth_container = document.getElementById('gt_container_25');
+loadColors('data/shallow_25_1/groundtruth.json', ground_truth_container, "slider_shallow_25");
+
+var ours_container = document.getElementById('ours_container_25');
+loadColors('data/shallow_25_1/gns.json', ours_container, "slider_shallow_25");
+
+var dino_container = document.getElementById('dino_container_25');
+loadColors('data/shallow_25_1/dino.json', dino_container, "slider_shallow_25");
+
+var mgn_container = document.getElementById('mgn_container_25');
+loadColors('data/shallow_25_1/mgn.json', mgn_container, "slider_shallow_25");
+
+var magnet_container = document.getElementById('magnet_container_25');
+loadColors('data/shallow_25_1/magnet.json', magnet_container, "slider_shallow_25");
