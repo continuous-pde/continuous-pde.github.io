@@ -11,8 +11,14 @@
     <!-- Core theme CSS (includes Bootstrap)-->
 
     <link href="css/styles.css" rel="stylesheet"/>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
-            type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
+
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     <!--    <script src="https://threejs.org/build/three.js"></script>-->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300ital…alic%7CVarela+Round:400%7CBungee+Shade:regular%7CRoboto:300,regular,500"
@@ -311,14 +317,24 @@
         <h3>Model</h3>
         <i>Animation unrolls as you scroll down!</i>
     </div>
-    <div id="svg-container">
-        <svg width="1000" height="400">
-        </svg>
-    </div>
 
-    <div id="text_container">
-        <p id="text"></p>
-    </div>
+    <table class="table-responsive">
+        <tr>
+            <td>
+                <div id="svg-container" style="margin-top: 20%"></div>
+            </td>
+            <td>
+                <div id="text_container"><p id="text"></p></div>
+            </td>
+        </tr>
+    </table>
+    <!--        <svg width="1000" height="600">-->
+    <!--        </svg>-->
+    <!--        <p id="text"></p>-->
+
+    <!--    <div id="text_container">-->
+    <!--        <p id="text"></p>-->
+    <!--    </div>-->
 
 </div>
 
