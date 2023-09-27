@@ -108,9 +108,12 @@ d3.xml("assets/model_V2.svg")
                 d3.select("#svg-container").style("position", "absolute")
                 d3.select("#text_container").style("position", "absolute")
                 d3.select("#svg-container").style("pointer-events", "none")
+                d3.select("#svg-container").style("opacity", 0)
             } else {
                 d3.select("#svg-container").style("position", "fixed")
                 d3.select("#text_container").style("position", "fixed")
+                d3.select("#svg-container").style("pointer-events", "all")
+                d3.select("#svg-container").style("opacity", 1)
             }
 
             const translateY_scale = d3.scaleLinear().domain([1, 0]).range([0, 100]).clamp(true)
