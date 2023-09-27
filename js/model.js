@@ -19,6 +19,10 @@ const hrElement = document.getElementById("hr");
 const OFFSET = hrElement.offsetTop;
 // console.log(OFFSET)
 
+d3.select("#svg-container").style("position", "absolute")
+d3.select("#text_container").style("position", "absolute")
+d3.select("#svg-container").style("pointer-events", "none")
+d3.select("#svg-container").style("opacity", 0)
 
 d3.xml("assets/model_V2.svg")
     .then(data => {
@@ -103,6 +107,7 @@ d3.xml("assets/model_V2.svg")
             if (currentScrollPos < 0) {
                 d3.select("#svg-container").style("position", "absolute")
                 d3.select("#text_container").style("position", "absolute")
+                d3.select("#svg-container").style("pointer-events", "none")
             } else {
                 d3.select("#svg-container").style("position", "fixed")
                 d3.select("#text_container").style("position", "fixed")

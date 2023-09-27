@@ -96,6 +96,10 @@ function loadColors(fileURL, container, slider_name) {
             isDragging = false;
         });
 
+        renderer.domElement.addEventListener('mouseout', (event) => {
+            isDragging = false;
+        });
+
         renderer.domElement.addEventListener('mousemove', (event) => {
             if (!isDragging) return;
             const deltaMove = {
