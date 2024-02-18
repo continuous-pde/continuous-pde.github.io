@@ -12,7 +12,7 @@
 
     <link href="css/styles.css" rel="stylesheet"/>
     <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 
     </script>
@@ -93,8 +93,8 @@
 <!-- Responsive navbar-->
 <nav class=" navbar navbar-expand-lg navbar-dark bg-blue sticky-top">
     <div class="container">
-        <!--        <img src="assets/NeurIPS_logo.png" style="width: 15%;">-->
-        <!--        <p class="text-white">2023</p>-->
+        <img src="assets/ICLR-logo.svg" style="width: 15%;">
+        <p class="text-white">2024</p>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
@@ -123,41 +123,54 @@
 <div class="container text-center" style="margin-top:10px;">
     <table class="table2">
         <tr>
-            <td><a href="https://google.com" class="link-dark">Anonymous authors</a>&nbsp;</td>
+            <td><a href="https://scholar.google.com/citations?user=IC0ceIgAAAAJ&hl=en" class="link-dark">Steeven
+                Janny</a>&nbsp;
+            </td>
+            <td><a href="https://scholar.google.com/citations?user=KOXeslUAAAAJ&hl=fr" class="link-dark">Madiha
+                Nadri</a></td>
+            <td><a href="https://perso.liris.cnrs.fr/julie.digne/" class="link-dark">Julie Digne</a></td>
+            <td><a href="https://chriswolfvision.github.io/www/" class="link-dark">Christian Wolf</a></td>
         </tr>
         <tr>
-            <td></td>
+            <td>LIRIS</td>
+            <td>LAGEPP</td>
+            <td>LIRIS</td>
+            <td>Naver Labs Europe</td>
         </tr>
         <tr>
-            <td class="text-muted"><small></small></td>
+            <td class="text-muted"><small>INSA Lyon, France</small></td>
+            <td class="text-muted"><small>Univ. Claude Bernard, France</small></td>
+            <td class="text-muted"><small>INSA Lyon, France</small></td>
+            <td class="text-muted"><small>Grenoble, France</small></td>
         </tr>
     </table>
 </div>
 <!-- Background image -->
 
 <br/>
-<!--<div class="container">-->
-<!--    <div class="text-center">-->
-<!--        <img src="assets/teaser.gif" class="" style="width: 60%">-->
-<!--    </div>-->
-<!--</div>-->
+<div class="container">
+    <div class="text-center">
+        <img src="assets/teaser.png" class="" style="width: 75%">
+    </div>
+</div>
 
 
 <br/>
 
 <div class="container">
     <div class="row">
+
         <div class="col-sm"></div>
         <div class="item col-sm-3">
-            <a href="https://google.com" class="link-primary text-dark">
+            <a href="https://openreview.net/forum?id=4yaFQ7181M" class="link-primary text-dark">
                 <img src="assets/paper.png" width="20%"/>
-                <b>Paper (soon)</b></a>
+                <b>Paper</b></a>
         </div>
 
         <div class="item col-sm-3">
-            <a href="https://google.com" class="link-primary text-dark">
+            <a href="https://github.com/continuous-pde/continuous-pde" class="link-primary text-dark">
                 <img src="assets/github.png" width="20%"/>
-                <b>GitHub (soon)</b></a>
+                <b>GitHub</b></a>
         </div>
 
         <div class="col-sm"></div>
@@ -172,16 +185,26 @@
         <h3>Abstract</h3>
     </div>
     <div class="text-dark text-justify">
-        Modern techniques for physical simulations rely on numerical schemes and mesh-refinement methods to address trade-offs between precision and complexity, 
-        but these handcrafted solutions are tedious and require high computational power. Data-driven methods based on large-scale machine learning promise high 
-        adaptivity by integrating long-range dependencies more directly and efficiently. In this work, we focus on computational fluid dynamics and address the 
-        shortcomings of a large part of the literature, which are based on fixed support for computations and predictions in the form of regular or irregular grids. 
-        We propose a novel setup to perform predictions in a continuous spatial and temporal domain while being trained on sparse observations. We formulate the 
-        task as a double observation problem and propose a solution with two interlinked dynamical systems defined on, respectively, the sparse positions and 
-        the continuous domain, which allows to forecast and interpolate a solution from the initial condition. Our practical implementation involves recurrent GNNs 
-        and a spatio-temporal attention observer capable of interpolating the solution at arbitrary locations. Our model not only generalizes to new initial conditions 
-        (as standard auto-regressive models do) but also performs evaluation at arbitrary space and time locations. We evaluate on three standard datasets in fluid 
-        dynamics and compare to strong baselines, which are outperformed both in classical settings and in the extended new task requiring continuous predictions.
+        Modern techniques for physical simulations rely on numerical schemes and mesh-refinement methods to address
+        trade-offs between precision and complexity,
+        but these handcrafted solutions are tedious and require high computational power. Data-driven methods based on
+        large-scale machine learning promise high
+        adaptivity by integrating long-range dependencies more directly and efficiently. In this work, we focus on
+        computational fluid dynamics and address the
+        shortcomings of a large part of the literature, which are based on fixed support for computations and
+        predictions in the form of regular or irregular grids.
+        We propose a novel setup to perform predictions in a continuous spatial and temporal domain while being trained
+        on sparse observations. We formulate the
+        task as a double observation problem and propose a solution with two interlinked dynamical systems defined on,
+        respectively, the sparse positions and
+        the continuous domain, which allows to forecast and interpolate a solution from the initial condition. Our
+        practical implementation involves recurrent GNNs
+        and a spatio-temporal attention observer capable of interpolating the solution at arbitrary locations. Our model
+        not only generalizes to new initial conditions
+        (as standard auto-regressive models do) but also performs evaluation at arbitrary space and time locations. We
+        evaluate on three standard datasets in fluid
+        dynamics and compare to strong baselines, which are outperformed both in classical settings and in the extended
+        new task requiring continuous predictions.
     </div>
 </div>
 
@@ -196,8 +219,8 @@
         <div class="text-center">
             <h5> 2D Navier Dataset</h5>
             <p style="font-size:1.1vw;"><u>Spatial Resolution</u>: <b>25%</b> <u>Temporal resolution</u>: <b>1/4</b></p>
-            <div id="img-container-25-4"> </div>
-<!--            <img id="slider-image-navier-25-4" src="" style="width: 100%; height: auto;">-->
+            <div id="img-container-25-4"></div>
+            <!--            <img id="slider-image-navier-25-4" src="" style="width: 100%; height: auto;">-->
             Time: <input type="range" id="slider-navier-25-4" min="0" max="19" step="1" value="0" style="width: 50%">
         </div>
     </div>
@@ -207,8 +230,8 @@
     <div class="container">
         <div class="text-center">
             <p style="font-size:1.1vw;"><u>Spatial Resolution</u>: <b>5%</b> <u>Temporal resolution</u>: <b>1/1</b></p>
-            <div id="img-container-05-1"> </div>
-<!--            <img id="slider-image-navier-05-1" src="" style="width: 100%; height: auto;">-->
+            <div id="img-container-05-1"></div>
+            <!--            <img id="slider-image-navier-05-1" src="" style="width: 100%; height: auto;">-->
             Time: <input type="range" id="slider-navier-05-1" min="0" max="19" step="1" value="0" style="width: 50%">
         </div>
 
@@ -309,6 +332,21 @@
 <br/>
 <br/>
 <hr id="hr"/>
+
+<div class="container" id="ack" style="padding-top:100px; margin-top:-100px;">
+    <div class="text-dark text-justify text-center">
+        <h3>Acknowledgements</h3>
+    </div>
+    We recognize support through French grants <i>Delicio</i> (ANR-19-CE23-0006) of call CE23
+    <i>Intelligence Artificielle</i> and <i>Remember</i> (ANR-20-CHIA0018), of call <i>Chaires IA
+    hors centres</i>. This work was granted access to the HPC resources of IDRIS made by GENCI
+
+</div>
+<br/>
+<br/>
+<br/>
+<hr/>
+
 
 <div class="container" id="model" style="padding-top:100px; margin-top:-100px;">
     <div class="text-dark text-justify text-center">

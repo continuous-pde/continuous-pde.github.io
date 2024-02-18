@@ -24,7 +24,7 @@ d3.select("#text_container").style("position", "absolute")
 d3.select("#svg-container").style("pointer-events", "none")
 d3.select("#svg-container").style("opacity", 0)
 
-d3.xml("assets/model_V2.svg")
+d3.xml("assets/model.svg")
     .then(data => {
         svg2.node().append(data.documentElement);
 
